@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: nh-tg-stream-host
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: BIN_CHANNEL
+        sync: false
+      - key: SECRET_KEY
+        generateValue: true
+      - key: BASE_URL
+        sync: false
+      - key: MULTI_TOKENS
+        sync: false
+      - key: ALLOWED_USERS
+        sync: false

@@ -1,0 +1,115 @@
+================================================================================
+NH DEVELOPER — TELEGRAM FREE VIDEO HOST (STREAM + DOWNLOAD LINK GENERATOR)
+Package: NH_TG_Stream_Host_Free_v1.zip (Complete 5-File Server Pack)
+Official Telegram Channel: https://t.me/htmlmovievg (@htmlmovievg)
+================================================================================
+
+OVERVIEW
+--------
+Turn Telegram into your own Unlimited Free Video Hosting Server (₹0/month) with:
+- 1 GB to 4 GB Large Movie Support (Bypasses normal 20 MB Bot API limit)
+- Pyrogram MTProto 1 MB Chunk Streaming + aiohttp HTTP 206 Partial Content
+- Instant Forward/Rewind Seeking in NH BOX App (Media3 ExoPlayer), VLC, MX & Web
+- High-Speed Direct Download Links (Browser / IDM / ADM)
+- HMAC-SHA256 Signed URL Security (Prevents link scraping/guessing)
+
+FILES INCLUDED IN THIS ZIP (5 CLEAN FILES)
+------------------------------------------
+1. bot_server.py        -> Complete Pyrogram MTProto + aiohttp HTTP 206 Server
+2. requirements.txt     -> Python dependencies (pyrogram, tgcrypto, aiohttp)
+3. Dockerfile           -> Python 3.11 Slim container configuration (Port 8080)
+4. render.yaml          -> Render.com 1-click Free Docker Cloud Blueprint
+5. SETUP_FREE_GUIDE.txt -> This complete step-by-step Hindi + English setup guide
+
+================================================================================
+STEP-BY-STEP SETUP GUIDE (HINDI + ENGLISH)
+================================================================================
+
+STEP 1: GET API_ID & API_HASH FROM MY.TELEGRAM.ORG
+--------------------------------------------------
+1. Open https://my.telegram.org in your mobile or laptop browser.
+2. Enter your Telegram phone number with country code (e.g., +919876543210).
+3. Copy the Confirmation Code received in your Telegram app and click "Sign In".
+4. Click on "API development tools".
+5. If prompted to create an app, fill:
+   - App title: NH Stream Host
+   - Short name: nhstream
+6. Copy your "App api_id" (numeric) and "App api_hash" (32-char string) into a note.
+
+STEP 2: CREATE BOT_TOKEN & PRIVATE BIN_CHANNEL
+----------------------------------------------
+1. Open @BotFather on Telegram and send /newbot
+   - Display Name: NH Stream Bot
+   - Username: NHStreamBot (must end with 'bot')
+   - Copy the HTTP API BOT_TOKEN.
+2. Create a New Telegram Channel:
+   - Channel Name: NH Private Storage
+   - Channel Type: PRIVATE (Strictly Private)
+   - Go to Channel Settings -> Administrators -> Add Bot (@NHStreamBot) as Admin.
+   - Make sure "Post Messages" and "Read" permissions are ON.
+3. Get your numeric BIN_CHANNEL ID:
+   - Send any test text message inside your Private Channel.
+   - Forward that message to @userinfobot or @RawDataBot on Telegram.
+   - Copy the Chat ID including the -100 prefix (Example: -1002198475612).
+
+STEP 3: UPLOAD THESE 5 FILES TO GITHUB
+--------------------------------------
+1. Go to https://github.com/new and create a new repository (e.g., nh-tg-stream-host).
+   You can keep the repository Private or Public.
+2. Click "uploading an existing file".
+3. Extract this ZIP and select all 5 files:
+   (bot_server.py, requirements.txt, Dockerfile, render.yaml, SETUP_FREE_GUIDE.txt)
+4. Click the green "Commit changes" button.
+
+STEP 4: DEPLOY FREE DOCKER SERVER ON RENDER.COM ($0/MONTH)
+----------------------------------------------------------
+1. Open https://dashboard.render.com (No credit card needed for Free tier).
+2. Click "New +" -> "Web Service" and connect your GitHub repository.
+3. Select:
+   - Runtime: Docker
+   - Instance Type: Free ($0 / month)
+4. Scroll to "Environment Variables" and add these 6 keys:
+   -----------------------------------------------------------------------------
+   KEY           | EXAMPLE VALUE
+   -----------------------------------------------------------------------------
+   API_ID        | 28491056
+   API_HASH      | 9f8c7b6a5d4e3f2a1b0c9d8e7f6a5b4c
+   BOT_TOKEN     | 7182930456:AAH9xK2mP4qW8vL1nZ3rT6yU0bC5dE7fG9h
+   BIN_CHANNEL   | -1002198475612
+   SECRET_KEY    | nh_super_secret_hmac_key_2026
+   BASE_URL      | https://nh-tg.onrender.com   (Your Render URL, no slash at end)
+   -----------------------------------------------------------------------------
+5. Click "Create Web Service". Within 2–3 minutes, the logs will show:
+   - [NH-Host] ✅ Primary bot started.
+   - [NH-Host] ✅ HTTP Stream Server running on port 8080
+   And the top badge will turn green ("LIVE").
+
+STEP 5: 24x7 KEEP-ALIVE SETUP ON UPTIMEROBOT.COM
+------------------------------------------------
+Render's free plan sleeps after 15 minutes of inactivity. To keep it awake 24x7:
+1. Create a free account on https://uptimerobot.com
+2. Click "+ Add New Monitor":
+   - Monitor Type: HTTP(s)
+   - Friendly Name: NH Telegram Stream Host
+   - URL: https://nh-tg.onrender.com/health
+   - Monitoring Interval: Every 5 minutes
+3. Click "Create Monitor". Your server will now stay active 24x7!
+
+STEP 6: GENERATE LINKS & PLAY IN NH BOX APP
+-------------------------------------------
+1. Open your Telegram bot and forward/upload any large movie file (MP4/MKV).
+2. Within 1 second, the bot archives the movie in BIN_CHANNEL and replies with:
+   - 🚀 Direct Stream Link:   https://nh-tg.onrender.com/stream/42/<sig>.mp4
+   - 📥 Direct Download Link: https://nh-tg.onrender.com/dl/42/<sig>.mp4
+   - ▶️ Watch Online Button:  https://nh-tg.onrender.com/watch/42/<sig>.mp4
+3. Paste the Stream Link into your NH BOX Admin Panel (Video URL box) for instant
+   1080p HD streaming and fast offline downloads!
+
+PRO SCALING TIPS (OPTIONAL ENVIRONMENT VARIABLES)
+-------------------------------------------------
+- MULTI_TOKENS: Add 2–4 extra bot tokens separated by commas (token2,token3)
+  and make those bots Admins in BIN_CHANNEL too. The server automatically
+  load-balances concurrent video streams across all bots!
+- ALLOWED_USERS: Add your personal Telegram numeric ID (e.g., 123456789) so
+  only you can upload movies to the bot, while everyone can stream signed links.
+================================================================================
